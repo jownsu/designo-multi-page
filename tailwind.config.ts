@@ -19,8 +19,9 @@ const config: Config = {
                 dark_grey: "#333136",
                 light_grey: "#F3F4F6"
             }
-        }
-    },
-    plugins: []
+        },
+        plugins: []
+    }
 };
+
 export default config;
