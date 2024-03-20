@@ -22,7 +22,7 @@ const Navbar = () => {
     const [is_navbar_open, setIsNavbarOpen] = useState(false);
 
     return (
-        <div className="sticky top-0 h-[96px] bg-white px-0 md:flex md:h-[155px] md:px-[39px] lg:px-[165px]">
+        <div className="sticky top-0 h-[96px] bg-white px-0 md:flex md:h-[155px] z-20 md:px-[39px] lg:px-[165px]">
             <div className="flex h-full items-center justify-between px-[24px] md:px-0">
                 <Link href="/">
                     <img
