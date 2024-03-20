@@ -17,7 +17,7 @@ const Navbar = () => {
             href: "/"
         }
     ];
-    const [is_navbar_open, setIsNavbarOpen] = useState(true);
+    const [is_navbar_open, setIsNavbarOpen] = useState(false);
 
     return (
         <div className="sticky top-0 h-[96px] bg-white px-0 md:flex md:h-[155px] md:px-[39px] lg:px-[165px]">
