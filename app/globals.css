@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer utilities {
+    .input_fields{
+        @apply bg-transparent placeholder:text-zinc-300 outline-none p-4 border-b-[1px] focus:border-b-[3px] border-b-white w-full;
+    }
+}
