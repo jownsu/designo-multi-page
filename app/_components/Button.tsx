@@ -7,7 +7,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({ children, variant = "primary", ...props }: Props) => {
     let button_style =
-        "h-[56px] w-[152px] tracking-[1px] text-[15px] hover:bg-primary_light duration-200 rounded-lg uppercase ";
+        "h-[56px] w-[152px] tracking-[1px] text-[15px] hover:bg-primary_light duration-200 rounded-lg uppercase font-medium ";
 
     if (variant === "primary") {
         button_style += "bg-primary text-white";
