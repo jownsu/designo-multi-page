@@ -44,7 +44,7 @@ const LocationPage = () => {
         }
     ];
     return (
-        <div className="flex flex-col gap-[40px] lg:gap-[32px]">
+        <div className="mb-[300px] flex flex-col gap-[40px] lg:gap-[32px]">
             {locations.map((location, index) => (
                 <LocationContainer
                     key={index}

@@ -31,14 +31,12 @@ const DesignCard = ({ className, category, href, small = false }: Props) => {
     return (
         <Link
             href={href}
-            className={`relative flex min-h-[250px] flex-col items-center justify-center rounded-[15px] bg-cover p-[30px] ${className} ${img[category][0]} ${img[category][1]} ${category === "WEB" && small ? img[category][3] : img[category][2]} before:absolute before:top-0 before:h-full before:w-full before:rounded-[15px] before:opacity-[80%] before:hover:bg-primary`}
+            className={`${className} ${img[category][0]} ${img[category][1]} ${category === "WEB" && small ? img[category][3] : img[category][2]} relative flex min-h-[250px] flex-col items-center justify-center rounded-[15px] bg-cover bg-center p-[30px] before:absolute before:top-0 before:h-full before:w-full before:rounded-[15px] before:bg-black before:opacity-[50%] after:absolute after:top-0 after:h-full after:w-full after:rounded-[15px] after:opacity-[80%] after:hover:bg-primary after:transition-colors hover:bg-[size:120%]`}
         >
             <h2 className="z-10 mb-[13px] text-[24px] leading-[30px] text-white">
                 {category} DESIGN
             </h2>
-            <div
-                className="z-10 flex items-center gap-[15px] text-[15px] tracking-[5px] text-white"
-            >
+            <div className="z-10 flex items-center gap-[15px] text-[15px] tracking-[5px] text-white">
                 VIEW PROJECTS
                 <img src="/images/shared/desktop/icon-right-arrow.svg" />
             </div>
