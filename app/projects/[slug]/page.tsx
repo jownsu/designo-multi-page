@@ -1,5 +1,6 @@
 import { Category } from "@/app/entities/Category";
-import ProjectCard from "../_components/ProjectCard";
+import OtherCategories from "./_components/OtherCategories";
+import ProjectCard from "./_components/ProjectCard";
 
 interface Props {
     params: { slug: string };
@@ -35,11 +36,13 @@ const ProjectPage = async ({ params }: Props) => {
                 </p>
             </div>
 
-            <div className="container grid grid-cols-1 gap-[40px] px-[24px] pb-[300px] pt-[96px] md:gap-[32px] md:px-0 md:pt-[120px] lg:grid-cols-3 lg:gap-[30px] lg:px-0 lg:pt-[160px]">
+            <div className="container mb-[96px] grid grid-cols-1 gap-[40px] px-[24px] pt-[96px] md:mb-[120px] md:gap-[32px] md:px-0 md:pt-[120px] lg:mb-[160px] lg:grid-cols-3 lg:gap-[30px] lg:px-0 lg:pt-[160px]">
                 {category.projects.map((project) => (
                     <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
+
+            <OtherCategories others={category.others} />
         </div>
     );
 };

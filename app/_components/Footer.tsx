@@ -1,12 +1,14 @@
-"use client";
-import Link from "next/link";
+
+
 import FacebookIcon from "@/public/images/shared/desktop/icon-facebook.svg";
-import YoutubeIcon from "@/public/images/shared/desktop/icon-youtube.svg";
-import TwitterIcon from "@/public/images/shared/desktop/icon-twitter.svg";
-import PinterestIcon from "@/public/images/shared/desktop/icon-pinterest.svg";
 import InstagramIcon from "@/public/images/shared/desktop/icon-instagram.svg";
-import Button from "./Button";
-import { usePathname } from "next/navigation";
+
+import PinterestIcon from "@/public/images/shared/desktop/icon-pinterest.svg";
+import TwitterIcon from "@/public/images/shared/desktop/icon-twitter.svg";
+import YoutubeIcon from "@/public/images/shared/desktop/icon-youtube.svg";
+import Link from "next/link";
+import GetInTouch from "./GetInTouch";
+
 
 const LINKS = [
     {
@@ -57,28 +59,11 @@ const SOCIAL_LINKS = [
 ];
 
 const Footer = () => {
-    const pathname = usePathname();
-    
     return (
         <footer className="relative flex flex-col items-center bg-black_1 pb-[64px] pt-[253px] md:px-[40px] md:pb-[80px] md:pt-[166px] lg:pb-[72px] lg:pt-[142px]">
-            {(pathname !== "/contact") &&
-                <div className="absolute top-[-190px] flex h-[379px] w-[calc(100%-48px)] flex-col items-center justify-center rounded-[15px] bg-primary bg-[url('/images/shared/desktop/bg-pattern-call-to-action.svg')] bg-[length:250%] bg-[position:-220px] bg-no-repeat px-[20px] md:top-[-264px] md:h-[350px] md:w-[calc(100%-80px)] md:bg-[length:120%] md:bg-[position:0] lg:top-[-220px] lg:h-[292px] lg:max-w-[1111px] lg:flex-row lg:justify-between lg:bg-[length:80%] lg:bg-right lg:px-[96px]">
-                    <div className="text-center text-white lg:text-left">
-                        <p className="mx-auto mb-[16px] w-[250px] text-[32px] font-medium leading-[37px] md:w-[300px] md:text-[40px] lg:mx-0 lg:mb-[20px]">
-                            Let’s talk about your project
-                        </p>
-                        <p className="mb-[35px] text-[15px] md:w-[420px] lg:mb-0">
-                            Ready to take it to the next level? Contact us today and
-                            find out how our expertise can help your business grow.
-                        </p>
-                    </div>
-                    <Button variant="secondary">
-                        <Link href={"/contact"}>
-                            Get in touch
-                        </Link>
-                    </Button>
-                </div>
-            }
+
+            <GetInTouch />
+
             <div className="container text-center text-white md:text-start">
                 <div className="mb-[20px] flex flex-col self-stretch px-[24px] md:mb-[35px] md:flex-row md:justify-between md:border-b md:border-white md:border-opacity-10 md:px-0 md:pb-[42px]">
                     <div className="mb-[30px] border-b border-white border-opacity-10 pb-[30px] md:mb-0 md:border-none md:pb-0">
