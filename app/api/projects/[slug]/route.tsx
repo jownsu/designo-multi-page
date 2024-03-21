@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { DUMMY_PROJECTS } from "@/constants/dummy_projects";
+import { DUMMY_PROJECTS } from "@/data/dummy_projects";
 
 export async function GET(
     request: NextRequest,
