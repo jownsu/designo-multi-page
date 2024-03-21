@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const DUMMY_DATA = [
     {
         slug: "web-design",
+        title: "Web Design",
         description:
             "We build websites that serve as powerful marketing tools and bring memorable brand experiences.",
         image: "/images/projects/bg-pattern-intro-web.svg",
@@ -53,6 +54,7 @@ const DUMMY_DATA = [
     },
     {
         slug: "app-design",
+        title: "App Design",
         description:
             "Our mobile designs bring intuitive digital solutions to your customers right at their fingertips.",
         image: "/images/projects/bg-pattern-intro-app.svg",
@@ -95,6 +97,7 @@ const DUMMY_DATA = [
     },
     {
         slug: "graphic-design",
+        title: "Graphic Design",
         description:
             "We deliver eye-catching branding materials that are tailored to meet your business objectives.",
         image: "/images/projects/bg-pattern-intro-graphic.svg",
