@@ -3,7 +3,7 @@ import { MainBannerProps } from "@/app/entities/About";
 
 const MainBanner = ({banner_details}: MainBannerProps) => {
     return (
-        <div className="relative bg-primary text-white flex flex-col min-h-[715px] sm:min-h-[632px] sm:rounded-lg lg:flex-row-reverse  md:items-center lg:h-[483px] overflow-hidden ">
+        <div className="relative bg-primary text-white flex flex-col min-h-[715px] sm:min-h-[632px] sm:rounded-lg lg:flex-row-reverse  md:items-center lg:h-[483px] overflow-hidden z-10">
              <picture className="lg:shrink-0 lg:h-full md:w-full lg:w-auto z-10">
                 <source media="(min-width: 1111px)" srcSet={banner_details.image_path.lg} />
                 {/* desktop */}

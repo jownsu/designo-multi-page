@@ -5,7 +5,7 @@ import { SecondaryBannerProps } from "@/app/entities/About";
 
 const SecondaryBanner = ({className, banner_details}: SecondaryBannerProps) => {
     return (
-        <div className={`relative bg-primary_lighter text-dark_grey md:mt-[120px] lg:mt-[160px] flex flex-col min-h-[715px] sm:min-h-[632px] sm:rounded-lg lg:flex-row md:items-center lg:h-[483px] overflow-hidden ${className}`}>
+        <div className={`relative bg-primary_lighter text-dark_grey md:mt-[120px] lg:mt-[160px] flex flex-col min-h-[715px] sm:min-h-[632px] sm:rounded-lg lg:flex-row md:items-center lg:h-[483px] overflow-hidden z-10 ${className}`}>
             <picture className="lg:shrink-0 lg:h-full md:w-full lg:w-auto z-10">
                 <source media="(min-width: 1111px)" srcSet={banner_details.image_path.lg} />
                 {/* desktop */}

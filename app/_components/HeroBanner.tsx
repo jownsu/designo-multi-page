@@ -14,7 +14,7 @@ interface HeroBannerProps {
 const HeroBanner = ({title, variant, description, Image, action }: HeroBannerProps) => {
 
     return (
-        <div className="flex flex-col items-center w-[350px]">
+        <div className="flex flex-col items-center w-[350px] z-10">
             <div>
                 <CirclePattern className="absolute !w-[202px] !h-[202px] fill-inherit"/>
                 {Image}
