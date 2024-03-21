@@ -50,6 +50,10 @@ const DUMMY_DATA = [
                     "Get expert training in coding, data, design, and digital marketing",
                 image: "/images/projects/image-camp.jpg"
             }
+        ],
+        others: [
+            { category: "APP", href: "/projects/app-design" },
+            { category: "GRAPHIC", href: "/projects/graphic-design" }
         ]
     },
     {
@@ -93,6 +97,10 @@ const DUMMY_DATA = [
                 description: "A VR experience app made for Loopstudios",
                 image: "/images/projects/image-loopstudios.jpg"
             }
+        ],
+        others: [
+            { category: "WEB", href: "/projects/web-design" },
+            { category: "GRAPHIC", href: "/projects/graphic-design" }
         ]
     },
     {
@@ -122,6 +130,10 @@ const DUMMY_DATA = [
                     "A poster made in collaboration with the Federal Art Project",
                 image: "/images/projects/image-science.jpg"
             }
+        ],
+        others: [
+            { category: "APP", href: "/projects/app-design" },
+            { category: "WEB", href: "/projects/web-design" }
         ]
     }
 ];

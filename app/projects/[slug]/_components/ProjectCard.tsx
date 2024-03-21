@@ -5,7 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 const ProjectCard = ({ project }: { project: Project }) => {
     return (
-        <Fade direction="up" duration={500} triggerOnce>
+        <Fade duration={1000}>
             <div className="group flex h-[478px] flex-col overflow-hidden rounded-[15px] md:h-[310px] md:flex-row lg:h-[478px] lg:flex-col">
                 <img
                     src={project.image}

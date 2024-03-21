@@ -57,13 +57,13 @@ export default function Home() {
                 <DesignCard
                     category={"WEB"}
                     className="lg:row-start-1 lg:row-end-3"
-                    href="/web-design"
+                    href="/projects/web-design"
                 />
                 <DesignCard category={"APP"} className="bg-black"
-                    href="/app-design"
+                    href="/projects/app-design"
                 />
                 <DesignCard category={"GRAPHIC"} className="bg-black" 
-                    href="/graphic-design"
+                    href="/projects/graphic-design"
                 />
             </div>
             <div className="mb-[300px] flex flex-col px-[24px] text-black_1 md:px-[40px] lg:flex-row">
