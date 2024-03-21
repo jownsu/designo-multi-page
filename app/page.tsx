@@ -34,7 +34,7 @@ export default function Home() {
 
     return (
         <>
-            <div className="mb-[120px] flex h-[843px] flex-col overflow-hidden bg-primary bg-[url('/images/home/desktop/bg-pattern-hero-home.svg')] bg-[-40px_75px] bg-no-repeat md:mx-[40px] md:rounded-[15px] md:bg-[175px_120px] lg:mx-0 lg:h-[640px] lg:flex-row lg:bg-right-top">
+            <div className="mb-[120px] flex h-[843px] flex-col overflow-hidden bg-primary bg-[url('/images/home/desktop/bg-pattern-hero-home.svg')] bg-[-40px_75px] bg-no-repeat md:mx-[40px] md:rounded-[15px] md:bg-[175px_120px] lg:h-[640px] lg:flex-row lg:bg-right-top ">
                 <div className="px-[30px] pt-[80px] text-center md:px-[100px] lg:pt-[145px] lg:text-left">
                     <h1 className="text-[32px] leading-[36px] text-white md:text-[48px] md:leading-[48px]">
                         Award-winning custom designs and digital branding
@@ -53,7 +53,7 @@ export default function Home() {
                     src="/images/home/desktop/image-hero-phone.png"
                 />
             </div>
-            <div className="mb-[50px] grid grid-cols-1 grid-rows-3 justify-center gap-[24px] px-[24px] lg:grid-cols-2 lg:grid-rows-2 lg:px-0">
+            <div className="mb-[50px] grid grid-cols-1 grid-rows-3 justify-center gap-[24px] px-[24px] md:px-[40px] lg:grid-cols-2 lg:grid-rows-2">
                 <DesignCard
                     category={"WEB"}
                     className="lg:row-start-1 lg:row-end-3"
@@ -61,7 +61,7 @@ export default function Home() {
                 <DesignCard category={"APP"} className="bg-black" />
                 <DesignCard category={"GRAPHIC"} className="bg-black" />
             </div>
-            <div className="mb-[300px] flex flex-col px-[24px] text-black_1 lg:flex-row lg:px-0">
+            <div className="mb-[300px] flex flex-col px-[24px] text-black_1 md:px-[40px] lg:flex-row">
                 {qualities.map((quality, index) => (
                     <div
                         key={index}

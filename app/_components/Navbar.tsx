@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div className="bg-white sticky top-0 z-[99999]">
-            <div className="container mx-auto h-[96px] px-0 md:flex md:h-[155px] md:px-[39px] lg:px-0">
+            <div className="container mx-auto h-[96px] px-0 md:flex md:h-[155px] md:px-[40px]">
                 <div className="flex h-full items-center justify-between px-[24px] md:px-0">
                     <Link href="/" onClick={() => setIsNavbarOpen(false)}>
                         <img
