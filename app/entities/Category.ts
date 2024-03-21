@@ -6,4 +6,10 @@ export interface Category {
     description: string;
     image: string;
     projects: Project[];
+    others: OtherCategory[];
+}
+
+export interface OtherCategory {
+    category: "WEB" | "APP" | "GRAPHIC";
+    href: string;
 }

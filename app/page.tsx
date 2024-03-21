@@ -54,17 +54,13 @@ export default function Home() {
                 <DesignCard
                     category={"WEB"}
                     className="lg:row-start-1 lg:row-end-3"
-                    href="/web-design"
+                    href="/projects/web-design"
                 />
-                <DesignCard
-                    category={"APP"}
-                    className="bg-black"
-                    href="/app-design"
+                <DesignCard category={"APP"} className="bg-black"
+                    href="/projects/app-design"
                 />
-                <DesignCard
-                    category={"GRAPHIC"}
-                    className="bg-black"
-                    href="/graphic-design"
+                <DesignCard category={"GRAPHIC"} className="bg-black" 
+                    href="/projects/graphic-design"
                 />
             </div>
             <div className="mb-[300px] flex flex-col px-[24px] text-black_1 md:px-[40px] lg:flex-row lg:before:absolute lg:before:bottom-[-1330px] lg:before:right-[0px] lg:before:z-[-1] lg:before:h-[594px] lg:before:w-[1006px] lg:before:scale-[-1] lg:before:bg-[url('/images/shared/desktop/bg-pattern-leaf.svg')]">
