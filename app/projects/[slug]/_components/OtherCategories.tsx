@@ -18,6 +18,7 @@ const OtherCategories = ({ others }: Props) => {
                     direction={index % 2 === 0 ? "left" : "right"}
                 >
                     <DesignCard
+                        small
                         className="lg:w-full"
                         category={cat.category}
                         href={cat.href}
