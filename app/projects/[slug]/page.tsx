@@ -1,4 +1,5 @@
 import { Category } from "@/app/entities/Category";
+import { cache } from "react";
 import OtherCategories from "./_components/OtherCategories";
 import ProjectCard from "./_components/ProjectCard";
 
@@ -6,11 +7,15 @@ interface Props {
     params: { slug: string };
 }
 
-const ProjectPage = async ({ params }: Props) => {
-    const res = await fetch(
-        `http://localhost:3000/api/projects/${params.slug}`
-    );
+const fetchCategory = cache(async (slug: string) => {
+    const res = await fetch(`http://localhost:3000/api/projects/${slug}`);
     const category: Category = await res.json();
+
+    return category;
+});
+
+const ProjectPage = async ({ params }: Props) => {
+    const category: Category = await fetchCategory(params.slug);
 
     const bgStyle = {
         backgroundImage: `url('${category.image}')`
@@ -46,5 +51,14 @@ const ProjectPage = async ({ params }: Props) => {
         </div>
     );
 };
+
+export async function generateMetadata({ params }: Props) {
+    const category: Category = await fetchCategory(params.slug);
+
+    return {
+        title: `Designo | ${category.title}`,
+        description: `${category.title} page`
+    };
+}
 
 export default ProjectPage;
