@@ -5,9 +5,10 @@ interface Props {
     className?: string;
     category: "APP" | "WEB" | "GRAPHIC";
     small?: boolean;
+    href: string;
 }
 
-const DesignCard = ({ className, category, small = false }: Props) => {
+const DesignCard = ({ className, category, href, small = false }: Props) => {
     const img = {
         APP: [
             "bg-[url('/images/home/mobile/image-app-design.jpg')]",
@@ -29,7 +30,7 @@ const DesignCard = ({ className, category, small = false }: Props) => {
 
     return (
         <Link
-            href="/app-design"
+            href={href}
             className={`relative flex min-h-[250px] flex-col items-center justify-center rounded-[15px] bg-cover p-[30px] ${className} ${img[category][0]} ${img[category][1]} ${category === "WEB" && small ? img[category][3] : img[category][2]} before:absolute before:top-0 before:h-full before:w-full before:rounded-[15px] before:opacity-[80%] before:hover:bg-primary`}
         >
             <h2 className="z-10 mb-[13px] text-[24px] leading-[30px] text-white">
