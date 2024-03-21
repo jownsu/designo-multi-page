@@ -12,7 +12,7 @@ const Navbar = () => {
         },
         {
             name: "LOCATIONS",
-            href: "/location"
+            href: "/locations"
         },
         {
             name: "CONTACT",
