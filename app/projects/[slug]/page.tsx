@@ -11,15 +11,21 @@ const ProjectPage = async ({ params }: Props) => {
     );
     const category: Category = await res.json();
 
-    const testStyle = {
+    const bgStyle = {
         backgroundImage: `url('${category.image}')`
     };
 
     return (
-        <div className="md:px-[40px] xl:px-0">
+        <div className="relative md:px-[40px] xl:px-0">
+            <img
+                src="/images/shared/desktop/bg-pattern-leaf.svg"
+                alt="Pattern Leaf"
+                className="absolute left-0 top-[130px] z-[-1] hidden translate-x-[-165px] lg:block"
+            />
+
             <div
                 className={`flex h-[320px] flex-col items-center justify-center gap-[20px] bg-primary bg-right-top bg-no-repeat px-[24px] text-center text-white md:h-[252px] md:rounded-[15px] md:bg-[length:120%] md:bg-[position:-5px] lg:bg-auto lg:bg-right`}
-                style={testStyle}
+                style={bgStyle}
             >
                 <p className="text-[32px] font-medium md:text-[48px]">
                     {category.title}
