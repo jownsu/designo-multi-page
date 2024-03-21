@@ -8,6 +8,6 @@
         @apply bg-transparent placeholder:text-zinc-300 outline-none p-4 border-b-[1px] focus:border-b-[3px] border-b-white w-full;
     }
     .page_container{
-        @apply lg:px-0 sm:px-10 relative z-0;
+        @apply lg:px-0 sm:px-10 relative z-0 pt-[70px] pb-[120px];
     }
 }
