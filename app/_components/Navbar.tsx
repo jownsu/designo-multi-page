@@ -3,8 +3,12 @@ import React, { useState } from "react";
 import Hamburger from "@/public/images/shared/mobile/icon-hamburger.svg";
 import Close from "/public/images/shared/mobile/icon-close.svg";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import path from "path";
 
 const Navbar = () => {
+    const pathname = usePathname();
+    console.log(pathname);
     const links = [
         {
             name: "OUR COMPANY",
@@ -12,7 +16,7 @@ const Navbar = () => {
         },
         {
             name: "LOCATIONS",
-            href: "/location"
+            href: "/locations"
         },
         {
             name: "CONTACT",
@@ -46,7 +50,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-[24px] leading-[25px] tracking-[2px] text-white md:text-[14px] md:text-black_1"
+                            className={`text-[24px] leading-[25px] tracking-[2px] text-white md:text-[14px] md:text-black_1 hover:underline ${pathname === link.href ? "md:text-primary" : ""}`}
                             onClick={() => setIsNavbarOpen(false)}
                         >
                             {link.name}
