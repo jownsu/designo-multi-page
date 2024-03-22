@@ -1,8 +1,6 @@
-"use client";
-
 import DesignCard from "@/app/_components/DesignCard";
 import { OtherCategory } from "@/app/_entities/Category";
-import { Slide } from "react-awesome-reveal";
+import Slide from "@/app/_components/Slide";
 
 interface Props {
     others: OtherCategory[];
