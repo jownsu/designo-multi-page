@@ -16,6 +16,7 @@ const ContactPage = () => {
                     variant={"button"} 
                     key={location.title} 
                     title={location.title}
+                    id={location.id}
                 />
             )}
         </div>
