@@ -1,10 +1,13 @@
 import React from "react";
-import LocationContainer from "./_components/LocationContainer";
+import dynamic from "next/dynamic";
+const LocationContainer = dynamic(
+    () => import("./_components/LocationContainer"),
+    { ssr: false }
+);
 import { Metadata } from "next";
 import { LOCATION_DETAILS } from "../_constants/constants";
 
 const LocationPage = () => {
-
     return (
         <div className="mb-[300px] flex flex-col gap-[40px] lg:gap-[32px]">
             {LOCATION_DETAILS.map((location, index) => (
