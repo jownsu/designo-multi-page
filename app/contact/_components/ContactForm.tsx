@@ -10,7 +10,7 @@ import BGCirclePatternDesktop from "@/public/images/contact/desktop/bg-pattern-h
 import BGCirclePatternMobile from "@/public/images/contact/mobile/bg-pattern-hero-contact-mobile.svg";
 import Button from "@/app/_components/Button";
 import { FaCircleExclamation } from "react-icons/fa6";
-import { ContactFormData } from "@/app/entities/Contact";
+import { ContactFormData } from "@/app/_entities/Contact";
 
 // type ContactFormData = z.infer<typeof contact_schema>;
 

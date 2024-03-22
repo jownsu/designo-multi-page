@@ -1,5 +1,5 @@
 import BGCirclePatternDesktop from "@/public/images/about/desktop/bg-pattern-hero-about-desktop.svg";
-import { MainBannerProps } from "@/app/entities/About";
+import { MainBannerProps } from "@/app/_entities/About";
 
 const MainBanner = ({banner_details}: MainBannerProps) => {
     return (

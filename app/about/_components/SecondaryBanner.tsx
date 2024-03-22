@@ -1,6 +1,6 @@
 
 import BGCirclePattern from "@/public/images/shared/desktop/bg-pattern-three-circles.svg";
-import { SecondaryBannerProps } from "@/app/entities/About";
+import { SecondaryBannerProps } from "@/app/_entities/About";
 
 
 const SecondaryBanner = ({className, banner_details}: SecondaryBannerProps) => {
