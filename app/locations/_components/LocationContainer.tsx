@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Map from "./Map";
 import { Slide } from "react-awesome-reveal";
 
 export interface MapProps {
+    id: string;
     center: [number, number];
     title: string;
     office: string;
@@ -17,6 +18,7 @@ export interface MapProps {
 }
 
 const LocationContainer = ({
+    id,
     center,
     title,
     office,
@@ -24,8 +26,21 @@ const LocationContainer = ({
     contact: { phone, email, direction: contactDirection },
     direction
 }: MapProps) => {
+
+    useEffect(() => {
+        // Check if URL contains a hash (#) and scroll to the target element
+        console.log(window.location.hash.replace("#", ""));
+        if (window.location.hash) {
+          const element = document.getElementById(window.location.hash.replace("#", ""));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center'});
+            console.log("hihi");
+          }
+        }
+      }, []);
+
     return (
-        <div className="flex flex-col gap-[24px] md:mx-[40px] md:mb-[120px] lg:mb-0 lg:h-[326px] lg:flex-row-reverse lg:even:flex-row">
+        <div id={id} className="flex flex-col gap-[24px] md:mx-[40px] md:mb-[120px] lg:mb-0 lg:h-[326px] lg:flex-row-reverse lg:even:flex-row">
             <Slide direction={direction}>
                 <div className="overflow-hidden md:rounded-[15px] lg:min-w-[350px]">
                     <Map center={center} />

@@ -1,27 +1,13 @@
 "use client";
-import React, { useState } from "react";
 import Hamburger from "@/public/images/shared/mobile/icon-hamburger.svg";
-import Close from "/public/images/shared/mobile/icon-close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { NAVLINKS } from "../_constants/constants";
+import Close from "/public/images/shared/mobile/icon-close.svg";
 
 const Navbar = () => {
     const pathname = usePathname();
-
-    const links = [
-        {
-            name: "OUR COMPANY",
-            href: "/about"
-        },
-        {
-            name: "LOCATIONS",
-            href: "/locations"
-        },
-        {
-            name: "CONTACT",
-            href: "/contact"
-        }
-    ];
     const [is_navbar_open, setIsNavbarOpen] = useState(false);
 
     return (
@@ -45,7 +31,7 @@ const Navbar = () => {
                 <nav
                     className={`${is_navbar_open ? "flex" : "hidden"} w-full flex-col justify-center gap-[32px] bg-[#1D1C1E] px-[24px] py-[48px] md:flex md:flex-row md:items-center md:justify-end md:bg-inherit md:p-0`}
                 >
-                    {links.map((link) => (
+                    {NAVLINKS.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}

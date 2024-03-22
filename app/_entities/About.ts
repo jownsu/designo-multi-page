@@ -22,7 +22,7 @@ export interface SecondaryBannerProps {
 }
 
 export interface HeroBannerProps {
-    id: number;
+    id: string;
     title: string;
     variant: "text" | "button";
     description?: string;
