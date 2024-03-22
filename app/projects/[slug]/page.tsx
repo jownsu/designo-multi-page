@@ -8,7 +8,7 @@ interface Props {
 }
 
 const fetchCategory = cache(async (slug: string) => {
-    const res = await fetch(`http://localhost:3000/api/projects/${slug}`);
+    const res = await fetch(`${process.env.NEXT_URL}/api/projects/${slug}`);
     const category: Category = await res.json();
 
     return category;
