@@ -12,7 +12,7 @@ const AboutPage = () => {
         <div className={classNames({ page_container: true, "!pb-[310px]": true })}>
             <MainBanner banner_details={ABOUT_BANNER[0]}/>
             <SecondaryBanner className="" banner_details={ABOUT_BANNER[1]}/>
-            <div className="flex flex-col items-center md:flex-row gap-[48px] pt-[120px]">
+            <div className="flex flex-col items-center md:flex-row gap-[48px] pt-[120px] z-10 relative">
                 {LOCATIONS.map(location => 
                     <HeroBanner 
                         Image={location.image} 

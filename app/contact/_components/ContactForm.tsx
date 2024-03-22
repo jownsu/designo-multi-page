@@ -11,6 +11,7 @@ import Button from "@/app/_components/Button";
 import { FaCircleExclamation } from "react-icons/fa6";
 import { KeyboardEvent, useState } from "react";
 import { z } from "zod";
+import { AttentionSeeker } from "react-awesome-reveal";
 
 type ContactFormData = z.infer<typeof contact_schema>;
 
@@ -56,43 +57,51 @@ const ContactForm = () => {
             </div>
             <Form.Root autoComplete="off" onSubmit={handleSubmit(onSubmit)} className=" relative flex md:min-w-[445px] flex-col gap-3 px-6 w-full z-10">
                 <Form.Field name="name">
-                        <input type="text" {...register("name")} className={classNames({ input_fields: true })} placeholder="Name" />
-                        {
-                            errors.name && 
-                            <Form.Message className={classNames({form_validation: true, "top-[20px]": true })}>
+                    <input type="text" {...register("name")} className={classNames({ input_fields: true })} placeholder="Name" />
+                    {
+                        errors.name && 
+                        <AttentionSeeker effect="shakeX" className={classNames({form_validation: true, "top-[20px]": true })}>
+                            <Form.Message className="flex flex-row gap-2">
                                 {errors.name?.message}
                                 <FaCircleExclamation size={20}/>
                             </Form.Message>
-                        }
+                        </AttentionSeeker>
+                    }
                 </Form.Field>
                 <Form.Field name="email">
                     <input type="email" {...register("email")} className={classNames({ input_fields: true })} placeholder="Email"/>
                     {
-                            errors.email && 
-                            <Form.Message className={classNames({form_validation: true, "top-[90px]": true })}>
+                        errors.email && 
+                        <AttentionSeeker effect="shakeX" className={classNames({form_validation: true, "top-[90px]": true })}>
+                            <Form.Message className="flex flex-row gap-2">
                                 {errors.email?.message}
                                 <FaCircleExclamation size={20}/>
                             </Form.Message>
+                        </AttentionSeeker>
                     }
                 </Form.Field>
                 <Form.Field name="phone">
                     <input type="text" pattern="[0-9]*" onKeyDown={handleNumberOnly} {...register("phone")} className={classNames({ input_fields: true })} placeholder="Phone"/>
                     {
-                            errors.phone && 
-                            <Form.Message className={classNames({form_validation: true, "top-[157px]": true})}>
+                        errors.phone && 
+                        <AttentionSeeker effect="shakeX" className={classNames({form_validation: true, "top-[157px]": true})}>
+                            <Form.Message className="flex flex-row gap-2">
                                 {errors.phone?.message}
                                 <FaCircleExclamation size={20}/>
                             </Form.Message>
+                        </AttentionSeeker>
                     }
                 </Form.Field>
                 <Form.Field name="message">
                     <textarea {...register("message")} className={classNames({ input_fields: true, "resize-none":true, "overflow-hidden": true })} placeholder="Message"/>
                     {
-                            errors.message && 
-                            <Form.Message className={classNames({form_validation: true, "top-[260px]": true })}>
+                        errors.message && 
+                        <AttentionSeeker effect="shakeX" className={classNames({form_validation: true, "top-[260px]": true })}>
+                            <Form.Message className="flex flex-row gap-2">
                                 {errors.message?.message}
                                 <FaCircleExclamation size={20}/>
                             </Form.Message>
+                        </AttentionSeeker>
                     }
                 </Form.Field>
                 <Form.Submit asChild >
