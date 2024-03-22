@@ -8,7 +8,7 @@ const ContactPage = () => {
     return (
         <div className={classNames({ page_container: true })}>
         <ContactForm/>
-        <div className="flex flex-col items-center md:flex-row gap-[48px] mt-[120px]">
+        <div className="flex flex-col items-center md:flex-row gap-[48px] mt-[120px] z-10">
             {LOCATIONS.map(location => 
                 <HeroBanner 
                     Image={location.image} 
