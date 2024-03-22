@@ -1,4 +1,4 @@
-import { Category } from "@/app/entities/Category";
+import { Category } from "@/app/_entities/Category";
 import { cache } from "react";
 import OtherCategories from "./_components/OtherCategories";
 import ProjectCard from "./_components/ProjectCard";
