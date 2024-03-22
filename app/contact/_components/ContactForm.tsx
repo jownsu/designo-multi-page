@@ -1,7 +1,6 @@
 
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { z } from "zod";
 import { contact_schema } from "../../validationSchema";
 import { zodResolver } from '@hookform/resolvers/zod';
 import classNames from "classnames";
@@ -10,16 +9,23 @@ import BGCirclePatternDesktop from "@/public/images/contact/desktop/bg-pattern-h
 import BGCirclePatternMobile from "@/public/images/contact/mobile/bg-pattern-hero-contact-mobile.svg";
 import Button from "@/app/_components/Button";
 import { FaCircleExclamation } from "react-icons/fa6";
-import { ContactFormData } from "@/app/_entities/Contact";
+import { KeyboardEvent, useState } from "react";
+import { z } from "zod";
 
-// type ContactFormData = z.infer<typeof contact_schema>;
+type ContactFormData = z.infer<typeof contact_schema>;
 
 const ContactForm = () => {
-   
-
-    const {register, handleSubmit, formState: { errors }} = useForm<ContactFormData>({
+    const [error_message, setErrorMessage] = useState("");
+ 
+    const {register, handleSubmit, formState: { errors }, reset} = useForm<ContactFormData>({
         resolver: zodResolver(contact_schema)
     });
+
+    const handleNumberOnly = (event: KeyboardEvent<HTMLInputElement> ) => {
+        if (!/^[0-9 ]*$/.test(event.key) && event.key !== 'Backspace'){
+            event.preventDefault();
+        }
+    }
 
     const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
         try {
@@ -30,18 +36,18 @@ const ContactForm = () => {
                 },
                 body: JSON.stringify(data)
             });
-
+            alert("Submitted");
+            reset();
             if(!response.ok) throw new Error("There was an error in network response!");
             
         } catch (error) {
             //do error handling here.
-            console.log(errors);
-            
+            setErrorMessage("An unexpected error occurred.");
         }
     }
   
     return (
-        <div className="text-white overflow-hidden bg-primary py-[54px] flex flex-col md:items-center lg:flex-row min-h-[483px] sm:rounded-[15px] sm:px-14 relative">
+        <div className="text-white md:mx-[40px] overflow-hidden bg-primary py-[54px] flex flex-col md:items-center lg:flex-row min-h-[483px] sm:rounded-[15px] sm:px-14 relative">
             <BGCirclePatternDesktop className="fill-inherit z-0 absolute hidden sm:left-[-120px] sm:top-[-100px] lg:top-[-135px] lg:left-[-10px] sm:block"/>
             <BGCirclePatternMobile className="fill-inherit z-0 absolute sm:hidden top-[-1px] left-[-90px]"/> 
             <div className="flex flex-col text-center px-4 mb-12 md:text-left z-10">
@@ -70,7 +76,7 @@ const ContactForm = () => {
                     }
                 </Form.Field>
                 <Form.Field name="phone">
-                    <input type="tel" {...register("phone")} className={classNames({ input_fields: true })} placeholder="Phone"/>
+                    <input type="text" pattern="[0-9]*" onKeyDown={handleNumberOnly} {...register("phone")} className={classNames({ input_fields: true })} placeholder="Phone"/>
                     {
                             errors.phone && 
                             <Form.Message className={classNames({form_validation: true, "top-[157px]": true})}>
@@ -83,7 +89,7 @@ const ContactForm = () => {
                     <textarea {...register("message")} className={classNames({ input_fields: true, "resize-none":true, "overflow-hidden": true })} placeholder="Message"/>
                     {
                             errors.message && 
-                            <Form.Message className={classNames({form_validation: true, "top-[80px]": true })}>
+                            <Form.Message className={classNames({form_validation: true, "top-[260px]": true })}>
                                 {errors.message?.message}
                                 <FaCircleExclamation size={20}/>
                             </Form.Message>

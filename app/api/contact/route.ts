@@ -20,7 +20,6 @@ export async function POST (request: NextRequest){
         phone: body.phone,
         message: body.message,
     });
-    console.log(DUMMY_CONTAINER);
-    
+  
     return NextResponse.json(DUMMY_CONTAINER, {status: 200});
 }
