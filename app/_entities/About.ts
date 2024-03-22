@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 interface ImagePath  {
     sm:string;
     md:string;
@@ -17,4 +19,12 @@ export interface MainBannerProps {
 export interface SecondaryBannerProps {
     banner_details: BannerDetails;
     className?: string;
+}
+
+export interface HeroBannerProps {
+    id: number;
+    title: string;
+    variant: "text" | "button";
+    description?: string;
+    Image: ReactNode;
 }
