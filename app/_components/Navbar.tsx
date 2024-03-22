@@ -4,11 +4,10 @@ import Hamburger from "@/public/images/shared/mobile/icon-hamburger.svg";
 import Close from "/public/images/shared/mobile/icon-close.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import path from "path";
 
 const Navbar = () => {
     const pathname = usePathname();
-    console.log(pathname);
+
     const links = [
         {
             name: "OUR COMPANY",
@@ -26,7 +25,7 @@ const Navbar = () => {
     const [is_navbar_open, setIsNavbarOpen] = useState(false);
 
     return (
-        <div className="bg-white sticky top-0 z-[99999]">
+        <div className="sticky top-0 z-[99999] bg-white">
             <div className="container mx-auto h-[96px] px-0 md:flex md:h-[155px] md:px-[40px]">
                 <div className="flex h-full items-center justify-between px-[24px] md:px-0">
                     <Link href="/" onClick={() => setIsNavbarOpen(false)}>
@@ -50,7 +49,7 @@ const Navbar = () => {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className={`text-[24px] leading-[25px] tracking-[2px] text-white md:text-[14px] md:text-black_1 hover:underline ${pathname === link.href ? "md:text-primary" : ""}`}
+                            className={`text-[24px] leading-[25px] tracking-[2px] text-white hover:underline md:text-[14px] md:text-black_1 ${pathname === link.href ? "md:text-primary" : ""}`}
                             onClick={() => setIsNavbarOpen(false)}
                         >
                             {link.name}
@@ -58,7 +57,7 @@ const Navbar = () => {
                     ))}
                 </nav>
                 <div
-                onClick={()=> setIsNavbarOpen(false)}
+                    onClick={() => setIsNavbarOpen(false)}
                     className={`${is_navbar_open ? "block" : "hidden"} h-screen w-full bg-black opacity-[50%] md:hidden`}
                 ></div>
             </div>

@@ -20,7 +20,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${jost.className} overflow-x-hidden`}>
                 <Navbar />
-                <main className="container mx-auto min-h-screen">
+                <main className="container mx-auto min-h-screen relative">
                     {children}
                 </main>
                 <Footer />
