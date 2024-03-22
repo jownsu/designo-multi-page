@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={jost.className}>
+            <body className={`${jost.className} overflow-x-hidden`}>
                 <Navbar />
                 <main className="container mx-auto min-h-screen">
                     {children}
