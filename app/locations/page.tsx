@@ -1,5 +1,6 @@
 import React from "react";
 import LocationContainer from "./_components/LocationContainer";
+import { Metadata } from "next";
 
 const LocationPage = () => {
     const locations: {
@@ -10,7 +11,9 @@ const LocationPage = () => {
         contact: {
             phone: string;
             email: string;
+            direction?: "left" | "right";
         };
+        direction?: "left" | "right";
     }[] = [
         {
             center: [43.6544251, -79.4216365],
@@ -19,8 +22,10 @@ const LocationPage = () => {
             address: "3886 Wellington Street Toronto, Ontario M9C 3J5",
             contact: {
                 phone: "+1 253-863-8967",
-                email: "contact@designo.co"
-            }
+                email: "contact@designo.co",
+                direction: "left"
+            },
+            direction: "right"
         },
         {
             center: [-30.3293938, 149.785665],
@@ -29,8 +34,10 @@ const LocationPage = () => {
             address: "19 Balonne Street New South Wales 2443",
             contact: {
                 phone: "(02) 6720 9092",
-                email: "contact@designo.au"
-            }
+                email: "contact@designo.au",
+                direction: "right"
+            },
+            direction: "left"
         },
         {
             center: [51.7320575, -3.8721996],
@@ -39,8 +46,10 @@ const LocationPage = () => {
             address: "13 Colorado Way Rhyd-y-fro SA8 9GA",
             contact: {
                 phone: "078 3115 1400",
-                email: "contact@designer.uk"
-            }
+                email: "contact@designer.uk",
+                direction: "left"
+            },
+            direction: "right"
         }
     ];
     return (
@@ -53,10 +62,16 @@ const LocationPage = () => {
                     office={location.office}
                     address={location.address}
                     contact={location.contact}
+                    direction={location.direction}
                 />
             ))}
         </div>
     );
+};
+
+export const metadata: Metadata = {
+    title: "Designo | Locations",
+    description: "Location Page of Designo"
 };
 
 export default LocationPage;

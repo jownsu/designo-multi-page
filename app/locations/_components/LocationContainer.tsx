@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Map from "./Map";
+import { Slide } from "react-awesome-reveal";
 
 export interface MapProps {
     center: [number, number];
@@ -9,7 +11,9 @@ export interface MapProps {
     contact: {
         phone: string;
         email: string;
+        direction?: "left" | "right";
     };
+    direction?: "left" | "right";
 }
 
 const LocationContainer = ({
@@ -17,7 +21,8 @@ const LocationContainer = ({
     title,
     office,
     address,
-    contact: { phone, email }
+    contact: { phone, email, direction: contactDirection },
+    direction
 }: MapProps) => {
     
 
@@ -51,7 +56,7 @@ const LocationContainer = ({
                         </p>
                     </div>
                 </div>
-            </div>
+            </Slide>
         </div>
     );
 };
