@@ -1,18 +1,12 @@
 "use client";
-import { ReactNode } from "react";
-import Button from "./Button";
 import CirclePattern from "@/public/images/shared/desktop/bg-pattern-small-circle.svg";
 import { Slide } from "react-awesome-reveal";
+import { HeroBannerProps } from "../_entities/About";
+import Button from "./Button";
+import { useRouter } from "next/navigation";
 
-interface HeroBannerProps {
-    title: string;
-    variant: "text" | "button";
-    description?: string;
-    Image: ReactNode;
-    action?: () => void;
-}
-
-const HeroBanner = ({title, variant, description, Image, action }: HeroBannerProps) => {
+const HeroBanner = ({title, variant, description, Image, id }: HeroBannerProps) => {
+    const router = useRouter();
 
     return (
         <Slide direction="up" duration={1000} delay={0}>
@@ -24,7 +18,8 @@ const HeroBanner = ({title, variant, description, Image, action }: HeroBannerPro
                 <p className="text-xl font-medium mb-[32px] mt-[48px]">{title.replace("-", " ").toUpperCase()}</p>
                 {(variant === "text") && <p>{description}</p> }
                 {(variant === "button") &&
-                    <Button variant="primary" onClick={action}>
+                    // can use link instead of button
+                    <Button variant="primary" onClick={() => router.push(`/locations#${id}`)}>
                         See Location
                     </Button>
                 }

@@ -19,8 +19,10 @@ const LocationContainer = ({
     address,
     contact: { phone, email }
 }: MapProps) => {
+    
+
     return (
-        <div className="flex flex-col gap-[24px] lg:flex-row-reverse md:mx-[40px] md:mb-[120px] lg:mb-0 lg:h-[326px] lg:even:flex-row">
+        <div id="2" className="flex flex-col gap-[24px] lg:flex-row-reverse md:mx-[40px] md:mb-[120px] lg:mb-0 lg:h-[326px] lg:even:flex-row">
             <div className="overflow-hidden md:rounded-[15px] lg:min-w-[350px]">
                 <Map center={center} />
             </div>
