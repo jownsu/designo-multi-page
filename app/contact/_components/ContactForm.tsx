@@ -1,7 +1,7 @@
 
 "use client";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { contact_schema } from "../../validationSchema";
+import { contact_schema } from "../../_schema/validationSchema";
 import { zodResolver } from '@hookform/resolvers/zod';
 import classNames from "classnames";
 import * as Form from "@radix-ui/react-form";

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {contact_schema} from "@/app/validationSchema";
+import {contact_schema} from "@/app/_schema/validationSchema";
 import { z } from "zod";
 
 type ContactData = z.infer<typeof contact_schema>;
