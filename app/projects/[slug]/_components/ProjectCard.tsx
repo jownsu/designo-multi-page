@@ -1,6 +1,6 @@
 "use client";
 
-import { Project } from "@/app/entities/Project";
+import { Project } from "@/app/_entities/Project";
 import { Fade } from "react-awesome-reveal";
 
 const ProjectCard = ({ project }: { project: Project }) => {
