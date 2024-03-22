@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import HeroBanner from "../_components/HeroBanner";
 import { LOCATIONS } from "../_constants/constants";
 import ContactForm from "./_components/ContactForm";
@@ -22,5 +23,14 @@ const ContactPage = () => {
         </div>
     );
 }
+
+export const metadata: Metadata = {
+    title: {
+        template: "%s | Designo Contact",
+        default: "Designo | Contact"
+    },
+    description: "We are a creative agency that produces lasting results for our clients. Partnered with startups, corporations, and nonprofits alike, we craft designs that make a real impact. Our focus is on creating brands, products, and digital experiences that deeply connect with our clients’ audiences."
+}
+
 
 export default ContactPage;
