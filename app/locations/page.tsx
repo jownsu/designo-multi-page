@@ -4,6 +4,7 @@ import { Metadata } from "next";
 
 const LocationPage = () => {
     const locations: {
+        id: string;
         center: [number, number];
         title: string;
         office: string;
@@ -16,6 +17,7 @@ const LocationPage = () => {
         direction?: "left" | "right";
     }[] = [
         {
+            id: "canada",
             center: [43.6544251, -79.4216365],
             title: "Canada",
             office: "Designo Central Office",
@@ -28,6 +30,7 @@ const LocationPage = () => {
             direction: "right"
         },
         {
+            id: "australia",
             center: [-30.3293938, 149.785665],
             title: "Australia",
             office: "Designo AU Office",
@@ -40,6 +43,7 @@ const LocationPage = () => {
             direction: "left"
         },
         {
+            id: "united-kingdom",
             center: [51.7320575, -3.8721996],
             title: "United Kingdom",
             office: "Designo UK Office",
@@ -57,6 +61,7 @@ const LocationPage = () => {
             {locations.map((location, index) => (
                 <LocationContainer
                     key={index}
+                    id={location.id}
                     center={location.center}
                     title={location.title}
                     office={location.office}
