@@ -1,10 +1,14 @@
+
+
 import FacebookIcon from "@/public/images/shared/desktop/icon-facebook.svg";
 import InstagramIcon from "@/public/images/shared/desktop/icon-instagram.svg";
+
 import PinterestIcon from "@/public/images/shared/desktop/icon-pinterest.svg";
 import TwitterIcon from "@/public/images/shared/desktop/icon-twitter.svg";
 import YoutubeIcon from "@/public/images/shared/desktop/icon-youtube.svg";
 import Link from "next/link";
 import GetInTouch from "./GetInTouch";
+
 
 const LINKS = [
     {
@@ -57,7 +61,9 @@ const SOCIAL_LINKS = [
 const Footer = () => {
     return (
         <footer className="relative flex flex-col items-center bg-black_1 pb-[64px] pt-[253px] md:px-[40px] md:pb-[80px] md:pt-[166px] lg:pb-[72px] lg:pt-[142px]">
+
             <GetInTouch />
+
             <div className="container text-center text-white md:text-start">
                 <div className="mb-[20px] flex flex-col self-stretch px-[24px] md:mb-[35px] md:flex-row md:justify-between md:border-b md:border-white md:border-opacity-10 md:px-0 md:pb-[42px]">
                     <div className="mb-[30px] border-b border-white border-opacity-10 pb-[30px] md:mb-0 md:border-none md:pb-0">
