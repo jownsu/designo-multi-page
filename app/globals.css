@@ -11,6 +11,6 @@
         @apply lg:px-0 sm:px-10 relative z-0 pb-[120px];
     }
     .form_validation{
-        @apply absolute flex flex-row items-center italic gap-2 text-[12px] left-[308px];
+        @apply absolute items-center italic text-[12px] right-[32px];
     }
 }

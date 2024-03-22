@@ -7,18 +7,21 @@ import UnitedKingdom from "@/public/images/shared/desktop/illustration-united-ki
 /*To be transfered to CONSTANTS */
 export const LOCATIONS = [
     { 
+        id: 0,
         image: (
             <Canada/>
         ),
         title: "canada",
     },
     { 
+        id: 1,
         image: (
             <Australia/>
         ),
         title: "australia",
     },
     { 
+        id: 2,
         image: (
             <UnitedKingdom/>
         ),

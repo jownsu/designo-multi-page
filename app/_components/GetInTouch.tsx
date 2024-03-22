@@ -1,11 +1,13 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
+import { AttentionSeeker } from "react-awesome-reveal";
 import Button from "./Button";
-import { Slide, AttentionSeeker } from "react-awesome-reveal";
-import { usePathname } from "next/navigation";
+import Slide from "./Slide";
 
 const GetInTouch = () => {
     const pathname = usePathname();
+    const router = useRouter();
 
     if (pathname === "/contact") return null;
 
@@ -25,7 +27,12 @@ const GetInTouch = () => {
                     </p>
                 </div>
                 <AttentionSeeker effect="tada" delay={1000}>
-                    <Button variant="secondary">Get in touch</Button>
+                    <Button
+                        variant="secondary"
+                        onClick={() => router.push("/contact")}
+                    >
+                        Get in touch
+                    </Button>
                 </AttentionSeeker>
             </div>
         </Slide>

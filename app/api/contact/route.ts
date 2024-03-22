@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {contact_schema} from "@/app/validationSchema";
+import {contact_schema} from "@/app/_schema/validationSchema";
 import { z } from "zod";
 
 type ContactData = z.infer<typeof contact_schema>;
@@ -20,7 +20,6 @@ export async function POST (request: NextRequest){
         phone: body.phone,
         message: body.message,
     });
-    console.log(DUMMY_CONTAINER);
-    
+  
     return NextResponse.json(DUMMY_CONTAINER, {status: 200});
 }
